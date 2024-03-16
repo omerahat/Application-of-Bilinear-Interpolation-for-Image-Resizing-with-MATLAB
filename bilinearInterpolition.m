@@ -1,20 +1,14 @@
 function scaledImage = bilinearInterpolition(originalImage, scaleFactor)
-    disp('Script is executing up to this point.0');
     if scaleFactor <= 0
         error('Scale Factor Must Be Greater Than Zero');
     end
-    disp('Script is executing up to this point.1');
 
     [rows, cols, channels] = size(originalImage);
-    disp('Script is executing up to this point.2');
     newRows = round(rows * scaleFactor);
     newCols = round(cols * scaleFactor);
-    disp('Script is executing up to this point.3');
     scaledImage = zeros(newRows, newCols, channels, class(originalImage));
-    disp('Script is executing up to this point.4');
 
     for k = 1:channels
-        disp('Script is executing up to this point.5');
         for i = 1:newRows
             for j = 1:newCols
                 x = 1 + (i - 1) * (rows - 1) / (newRows - 1);
