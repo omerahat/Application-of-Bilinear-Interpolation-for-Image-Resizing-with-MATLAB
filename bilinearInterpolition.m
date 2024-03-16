@@ -1,4 +1,4 @@
-function scaledImage = scaleImage(originalImage, scaleFactor)
+function scaledImage = bilinearInterpolition(originalImage, scaleFactor)
     disp('Script is executing up to this point.0');
     if scaleFactor <= 0
         error('Scale Factor Must Be Greater Than Zero');
